@@ -74,7 +74,7 @@ function fun()
      Number(currentTime)<Number(lunchArr[3]) && 
      currentSession===lunchArr[4])
      {
-        document.querySelector(".img").src="./assest/krishnaPrasad.jpg "
+        document.querySelector(".img").src="./ "
         document.querySelector(".text1").textContent = "GOOD AFTERNOON !! TAKE SOME SLEEP"
         document.querySelector(".text2").textContent = "LET'S HAVE SOME LUNCH !!"
 
@@ -84,7 +84,7 @@ function fun()
      Number(currentTime)<Number(napArr[3]) &&
       currentSession===napArr[4])
       {
-        document.querySelector(".img").src="./assest/gita.jpg "
+        document.querySelector(".img").src="./ "
         document.querySelector(".text1").textContent = "GOOD EVENING !!"
         document.querySelector(".text2").textContent = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!"
         
@@ -93,7 +93,7 @@ function fun()
      Number(currentTime)<Number(sleepArr[3]) &&
       currentSession===sleepArr[4])
       {
-        document.querySelector(".img").src="./assest/sleep.jpg ";
+        document.querySelector(".img").src="./";
         document.querySelector(".img").style.height= "250px"
         document.querySelector(".text1").textContent = "GOOD NIGHT !!"
         document.querySelector(".text2").textContent = "CLOSE YOUR EYES AND GO TO SLEEP"
