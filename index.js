@@ -9,7 +9,11 @@ function time()
         document.getElementById("min").innerHTML= min;
         document.getElementById("sec").innerHTML= sec;
 
-        if(hrs>12)
+        if(hrs===12)
+        {
+            document.getElementById("dn").innerHTML = "PM"
+        }
+        else if(hrs>=12)
         {
             hrs=hrs-12;
             document.getElementById("hrs").innerHTML = hrs;
@@ -37,12 +41,16 @@ function fun()
     let napTime = document.querySelector("#drop-menu3").value;
     let nightTime = document.querySelector("#drop-menu4").value;
 
-    let wakeArr = wakeTime.split(" ")
-    let lunchArr = lunchTime.split(" ")
-    let napArr = napTime.split(" ")
-    let sleepArr = nightTime.split(" ")
+    let wakeArr = wakeTime.split(" ");
+    
+    let lunchArr = lunchTime.split(" ");
+    
+    let napArr = napTime.split(" ");
+    
+    let sleepArr = nightTime.split(" ");
 
 
+    console.log(wakeArr);
     
 
     // time message box
@@ -58,56 +66,43 @@ function fun()
     // image  and text changing according to current time
 
     let currentTime = document.querySelector("#hrs").textContent;
-    let currentSession = document.querySelector("#dm").textContent;
+    let currentSession = document.querySelector("#dn").textContent;
 
-    if (Number(currentTime)>=Number(wakeArr[0]) && 
-        Number(currentTime)<Number(wakeArr[3]) &&
-        currentSession===wakeArr[4])
+    if ((currentTime)>=parseInt(wakeArr[0]) && currentSession===(wakeArr[1]))
+      
       {
 
-        document.querySelector(".img").src="./"
+        document.querySelector(".img").src="./goodMorning.png"
         document.querySelector(".text1").textContent = "GOOD MORNING!! WAKE UP !!"
         document.querySelector(".text2").textContent = "GRAB SOME HEALTHY BREAKFAST!!! "
+        console.log("good nmghf");
     }
 
-    else if(Number(currentTime)>=Number(lunchArr[0]) &&
-     Number(currentTime)<Number(lunchArr[3]) && 
-     currentSession===lunchArr[4])
+    else if((currentTime)>=parseInt(lunchArr[0]) &&  currentSession===(lunchArr[1]))
      {
-        document.querySelector(".img").src="./ "
-        document.querySelector(".text1").textContent = "GOOD AFTERNOON !! TAKE SOME SLEEP"
+        document.querySelector(".img").src="./partyTime.png "
+        document.querySelector(".text1").textContent = "GOOD AFTERNOON !! "
         document.querySelector(".text2").textContent = "LET'S HAVE SOME LUNCH !!"
-
+        console.log("good erwt");
 
     }
-    else if(Number(currentTime)>=Number(napArr[0]) &&
-     Number(currentTime)<Number(napArr[3]) &&
-      currentSession===napArr[4])
+
+    else if((currentTime)>=parseInt(napArr[0]) && currentSession===napArr[1])
       {
-        document.querySelector(".img").src="./ "
+        document.querySelector(".img").src="./goodEvening.png "
         document.querySelector(".text1").textContent = "GOOD EVENING !!"
-        document.querySelector(".text2").textContent = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!"
-        
+        document.querySelector(".text2").textContent = "TAKE SOME SLEEP THEN GET SOME TEA.. ITS JUST EVENING!"
+        console.log("good edbhksd");
     }
-    else if(Number(currentTime)>=Number(sleepArr[0]) &&
-     Number(currentTime)<Number(sleepArr[3]) &&
-      currentSession===sleepArr[4])
+
+    else if((currentTime)>=parseInt(sleepArr[0]) && currentSession===sleepArr[1])
       {
-        document.querySelector(".img").src="./";
+        document.querySelector(".img").src="./goodNight.png";
         document.querySelector(".img").style.height= "250px"
         document.querySelector(".text1").textContent = "GOOD NIGHT !!"
         document.querySelector(".text2").textContent = "CLOSE YOUR EYES AND GO TO SLEEP"
-        
+        console.log("good mrehftj");
     }
-    
-    
-
-
-    
-
-
-
-setInterval(fun,1000)  // To make the page dynamic according to time set, calling the function at each interval of 1 second.
 
 
 
